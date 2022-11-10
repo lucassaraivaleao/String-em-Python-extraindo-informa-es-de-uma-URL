@@ -22,3 +22,23 @@ indice_parametro = url_parametros.find(parametro_busca)
 indice_valor = indice_parametro + len(parametro_busca) + 1
 valor = url_parametros[indice_valor:]
 print(valor)
+
+# buscando o outro parâmetro da url (dólar)
+
+parametro_busca = "moedaDestino"
+indice_parametro = url_parametros.find(parametro_busca)
+indice_valor = indice_parametro + len(parametro_busca) + 1
+indice_e_comercial = url_parametros.find('&')
+valor = url_parametros[indice_valor:indice_e_comercial]
+print(valor)
+
+# buscando qualquer valor dentro da url
+parametro_busca = "quantidade"
+indice_parametro = url_parametros.find(parametro_busca)
+indice_valor = indice_parametro + len(parametro_busca) + 1
+indice_e_comercial = url_parametros.find('&', indice_valor)
+if indice_e_comercial == -1:
+    valor = url_parametros[indice_valor:]
+else:
+    valor = url_parametros[indice_valor:indice_e_comercial]
+print(valor)
