@@ -6,3 +6,13 @@ busca = padrao.search(endereco)
 if busca:
     cep = busca.group()
     print(cep)
+
+#-------------------------------------------------------------------------------------
+# Extração de cpf dentro de uma string
+dados_usuario = "Lucas Saraiva Leão, analista de sistemas, cpf: 123.456.789-00"
+modelo_cpf = re.compile("[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}")
+buscar_modelo = modelo_cpf.search(dados_usuario)
+if buscar_modelo:
+    cpf = buscar_modelo.group()
+    print(cpf)
+    
